@@ -1,0 +1,60 @@
+.register-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.regiter-form .title{
+    text-align: center;
+    font-weight: bold !important;
+}
+.regiter-form {
+    /* background: red; */
+    padding: 21px;
+    width: 28%;
+    border-radius: 5px;
+    border: 2px solid #33333317;
+}
+
+.regiter-form .ant-row.ant-form-item-row.css-dev-only-do-not-override-ni1kz0 {
+    display: block;
+}
+
+.regiter-form .ant-col.ant-form-item-label.css-dev-only-do-not-override-ni1kz0 {
+    text-align: left;
+}
+
+.regiter-form label {
+    font-size: 25px !important;
+    font-weight: 200;
+    margin-bottom: 7px;
+}
+
+.regiter-form .ant-input {
+    font-size: 20px !important;
+    height: 48px !important;
+}
+.regiter-form #basic_username {
+    height: 43px !important;
+}
+
+.regiter-form span.ant-input-suffix {
+    font-size: 33px;
+}
+
+.regiter-form .ant-form-item.css-dev-only-do-not-override-ni1kz0 {
+    margin-bottom: 12px;
+}
+
+.regiter-form .ant-col.ant-col-16.ant-col-offset-8.ant-form-item-control.css-dev-only-do-not-override-ni1kz0 {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.regiter-form button{
+    width: 100%;
+    font-size: 23px;
+    padding: 25px;
+}
+

@@ -12,12 +12,13 @@ module.exports = function (req, res, next) {
       const verifyToken = jwt.verify(token, 'bookMyShow_BMS');
       //   console.log(verifyToken);
       req.body.userId = verifyToken.userId;
-
-      next();
       
-    } catch(error)
-    {
-        res.status(401).send({
+      
+      next();
+      return;
+      
+    } catch(error){
+        res.status(400).send({
             success: false,
             message: "Token Invalid"
         })

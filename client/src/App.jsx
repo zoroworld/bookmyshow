@@ -6,9 +6,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Admin from './pages/admin';
+import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-
-
 
 
 function App() {
@@ -23,8 +24,19 @@ function App() {
                   <Home />
                 </ProtectedRoute>
               } />
+              <Route path='/admin' element={
+                <ProtectedRoute>
+                  <Admin />
+                </ProtectedRoute>
+              } />
+                <Route path='/profile' element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              } />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Register />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
          </BrowserRouter>
       </div>

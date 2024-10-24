@@ -3,11 +3,10 @@ import { axiosInstance } from './index';
 export  const LoginUser = async (value) => {
     try {
         const response = await axiosInstance.post('api/users/login', value);
-
         return response.data;
     } catch (error) {
         console.error(error);
-        
+        return error.data;
     }
 }
 
@@ -17,6 +16,7 @@ export  const RegisterUser = async (value) => {
         return response.data;
     } catch (error) {
         console.error(error);
+        return error.data;
     }
 }
 
@@ -26,5 +26,6 @@ export  const GetCurrentUser = async () => {
         return response.data;
     } catch (error) {
         console.error(error);
+        return error.data;
     }
 }

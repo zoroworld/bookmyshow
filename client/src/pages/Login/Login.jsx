@@ -4,25 +4,27 @@ import './Login.css';
 import {LoginUser} from '../../api/users';
 import {useNavigate} from 'react-router-dom';
 import { useEffect } from 'react';
-
+import {message} from 'antd';
 
 const { Title } = Typography;
 function Login() {
   const navigate = useNavigate();
   const onFinish = async (values) => {
       try{
-        console.log(values);
+        // console.log(values);
         const response = await LoginUser(values);
+        console.log(response);
         if(response.success)
         {
           localStorage.setItem('token', response.token);
-          console.log(response);
           window.location.href = '/';
+          message.success("user log in");
         } else {
-          console.log(response.message);
+          message.error(response.message);
         }
       } catch(error){
-         console.log(error);
+        //  console.log(error);
+         message.error(error.message);
       }
      
   }

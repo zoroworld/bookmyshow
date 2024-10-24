@@ -19,7 +19,7 @@ router.post('/register', async (req,res) => {
 
         if(userExists)
         {
-            res.status(400).send({
+            res.send({
                 success: false,
                 message: "User already exists"
             })
@@ -36,7 +36,7 @@ router.post('/register', async (req,res) => {
 
         //tell end user user is created
 
-        res.status(200).send({
+        res.send({
             success: true,
             message: "User created successfully"
         })
@@ -61,7 +61,7 @@ router.post('/login', async (req,res) => {
     // console.log(user);
     
     if(!user){
-        res.status(400).send({
+        res.send({
             success: false,
             message: "user does not exists"
         });
@@ -72,7 +72,15 @@ router.post('/login', async (req,res) => {
     
     const validpassword = await bycrpt.compare(req.body.password, currentUsrPassword);
     if(!validpassword){
-        res.status(400).send({
+        
+        //this not show message in client because of status
+        // res.status(400).send({
+        //     success: false,
+        //     message: "password not correct"
+        // });
+
+       
+        res.send({
             success: false,
             message: "password not correct"
         });
@@ -83,7 +91,7 @@ router.post('/login', async (req,res) => {
         expiresIn:"1d",
     });
 
-    res.status(200).send({
+    res.send({
         success: true,
         message: "loged in",
         token: token
@@ -103,12 +111,12 @@ router.get('/get-current-user', authMiddleware, async (req, res) => {
     
     // const user = await User.findById(req.body.userId).select("-password -email");
     const user = await User.findById(req.body.userId).select("-password");
-
-    res.status(202).send({
+    
+    res.send({
         success: true,
         message: 'you are authorised',
         data: user
-    })
+    });
 
 
 });

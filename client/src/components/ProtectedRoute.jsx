@@ -10,6 +10,7 @@ import {
   LogoutOutlined,
   ProfileOutlined,
   UserOutlined,
+  MenuOutlined
 } from "@ant-design/icons";
 
 function ProtectedRoute({ children }) {
@@ -109,15 +110,17 @@ function ProtectedRoute({ children }) {
               theme="dark"
               mode="horizontal"
               items={navItems}
-              style={{ justifyContent: "flex-end" }}
+              overflowedIndicator={<MenuOutlined />} 
+              style={{ justifyContent: "flex-end", width: "100%" }}
             />
           </div>
         </Header>
-
-        <div>
-          {user?.name || ""}
+       
+        <div className="content-container">
+          {/* {user?.name || ""} */}
           {children}
         </div>
+   
       </Layout>
     </>
   );

@@ -7,9 +7,12 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Admin from './pages/admin';
+import SingleMovie from './pages/SingleMovie';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+
+
 
 
 function App() {
@@ -19,7 +22,7 @@ function App() {
       <div className='App'>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={
+             <Route path='/' element={
                 <ProtectedRoute>
                   <Home />
                 </ProtectedRoute>
@@ -29,9 +32,14 @@ function App() {
                   <Admin />
                 </ProtectedRoute>
               } />
-                <Route path='/profile' element={
+              <Route path='/profile' element={
                 <ProtectedRoute>
                   <Profile />
+                </ProtectedRoute>
+              } />
+               <Route path='/movie/:id' element={
+                <ProtectedRoute>
+                  <SingleMovie />
                 </ProtectedRoute>
               } />
             <Route path='/login' element={<Login />} />

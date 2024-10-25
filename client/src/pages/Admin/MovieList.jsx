@@ -106,7 +106,7 @@ function MovieList() {
           </div>
         </div>
         <div className="movie-table">
-          <Table columns={tableHeading} dataSource={movies} />
+          <Table columns={tableHeading} dataSource={movies} scroll={{ x: 800 }}   pagination={{ pageSize: 5 }} />
         </div>
       </div>
     </>

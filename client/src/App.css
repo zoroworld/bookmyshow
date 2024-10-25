@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 } */
+
+.content-container{
+  padding: 0 47px;
+}
+
+.ant-menu-submenu.ant-menu-submenu-popup.ant-menu.ant-menu-dark.css-dev-only-do-not-override-ni1kz0.ant-menu-submenu-placement-leftTop {
+  inset: 123px auto auto 154px !important;
+}

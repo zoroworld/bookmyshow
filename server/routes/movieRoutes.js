@@ -46,14 +46,13 @@ router.get('/get-all-movie' , async(req, res) => {
     }
 });
 
-router.get('/movie/:id' , async(req, res) => {
+router.get('/movie/:id' , async (req, res) => {
     try {
-        const movie = await Movie.findById(req.params.id);
-
+        const singleMovie = await Movie.findById(req.params.id);
         res.send({
             success: true,
-            message: 'All movie',
-            data: movie
+            message: 'Single movie movie',
+            data: singleMovie
         })
     } catch (error) {
         res.send({
